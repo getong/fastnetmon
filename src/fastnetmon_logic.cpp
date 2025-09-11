@@ -56,8 +56,13 @@
 #include "example_plugin/example_collector.hpp"
 
 #ifdef MONGO
+#ifdef USING_MONGO2
+#include <bson/bson.h>
+#include <mongoc/mongoc.h>
+#elif
 #include <bson.h>
 #include <mongoc.h>
+#endif
 #endif
 
 #include "fastnetmon_networks.hpp"
